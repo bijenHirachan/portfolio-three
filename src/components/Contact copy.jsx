@@ -23,10 +23,6 @@ const Left = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
-  @media screen and (max-width: 600px) {
-    justify-content: center;
-  }
 `;
 
 const Title = styled.h1`
@@ -38,9 +34,6 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  @media screen and (max-width: 600px) {
-    width: 300px;
-  }
 `;
 
 const Input = styled.input`
@@ -98,10 +91,6 @@ const Right = styled.div`
   flex: 1;
   width: 100%;
   height: 100%;
-
-  @media screen and (max-width: 600px) {
-    display: none;
-  }
 `;
 
 const Contact = () => {
@@ -136,10 +125,9 @@ const Contact = () => {
         <Left>
           <Form ref={form} onSubmit={handleSubmit}>
             <Title>Contact</Title>
-            <Input placeholder="Name" name="name" required />
-            <Input placeholder="Email" name="email" required />
+            <Input placeholder="Name" name="name" />
+            <Input placeholder="Email" name="email" />
             <TextArea
-              required
               rows={5}
               placeholder="Write your message"
               name="message"

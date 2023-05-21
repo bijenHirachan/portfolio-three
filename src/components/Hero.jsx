@@ -12,17 +12,18 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  z-index: 10;
 `;
 
 const Container = styled.div`
-  height: 100vh;
-  scroll-snap-align: center;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 10;
 `;
 
 const Intro = styled.div`
@@ -71,8 +72,9 @@ const SubTitle = styled.h3`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   background-image: linear-gradient(to right, #214eef, #fc5252);
+  text-decoration: none;
   border: none;
   color: #e8e8e8;
   width: 300px;
@@ -118,7 +120,7 @@ const Hero = () => {
         <Intro>
           <SubTitle>Hey there ! I'm Bijen Hirachan</SubTitle>
           <Title text={"A Fullstack Developer"}>A Fullstack Developer</Title>
-          <Button>
+          <Button href="#about">
             <span>Learn More About Me </span>
             <AiOutlineArrowDown fontSize={22} />
           </Button>

@@ -5,6 +5,7 @@ import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
 const Section = styled.div`
   display: flex;
   justify-content: center;
+  z-index: 50;
 `;
 
 const Container = styled.div`
@@ -14,6 +15,8 @@ const Container = styled.div`
   align-items: center;
   padding: 64px 0;
   position: fixed;
+  z-index: 50;
+  /* background-color: #171717; */
 
   /* @media screen and (max-width: 600px) {
     width: 90%;
@@ -58,8 +61,14 @@ const Icons = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
-  a {
+`;
+
+const IconItem = styled.a`
+  svg {
     color: #e8e8e8;
+    :hover {
+      color: #506355;
+    }
   }
 `;
 
@@ -87,12 +96,15 @@ const Navbar = () => {
           </ListItem>
         </List>
         <Icons>
-          <a href="https://www.linkedin.com/in/bijen-hirachan/" target="_blank">
+          <IconItem
+            href="https://www.linkedin.com/in/bijen-hirachan/"
+            target="_blank"
+          >
             <AiOutlineLinkedin fontSize={"32px"} />
-          </a>
-          <a href="https://github.com/bijenHirachan" target="_blank">
+          </IconItem>
+          <IconItem href="https://github.com/bijenHirachan" target="_blank">
             <AiOutlineGithub fontSize={"32px"} />
-          </a>
+          </IconItem>
         </Icons>
       </Container>
     </Section>
