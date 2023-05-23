@@ -5,16 +5,22 @@ const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   z-index: 10;
+  position: relative;
 `;
 
 const Container = styled.div`
   width: 1400px;
-  padding-top: 20vh;
-  height: 80%;
+  height: 100%;
   overflow-y: scroll;
   background-color: #171717;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 32px;
 
   @media screen and (max-width: 1399px) {
     width: 90%;
@@ -26,48 +32,28 @@ const Container = styled.div`
 `;
 
 const Title = styled.p`
-  padding-left: 4px;
+  position: absolute;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 24px;
+  bottom: 150px;
 `;
 
-const CardImageLeft = styled.div`
+const Card = styled.div`
   margin: 8px 4px;
   background-color: #506355;
   padding: 16px;
   display: grid;
   border-radius: 4px;
   box-shadow: 2px 2px 2px 2px #506355;
+  transition: all 0.3s;
   grid-template-areas:
-    "cardimage cardbody cardbody cardbody"
-    "cardimage cardbody cardbody cardbody"
-    "cardimage techstack techstack techstack";
+    "cardimage cardimage cardimage cardimage "
+    "cardbody cardbody cardbody cardbody "
+    "techstack techstack techstack techstack ";
+  box-shadow: 0 0 15px #171717;
 
-  @media screen and (max-width: 600px) {
-    grid-template-areas:
-      "cardimage cardimage cardimage cardimage"
-      "cardbody cardbody cardbody cardbody"
-      "techstack techstack techstack techstack";
-  }
-`;
-
-const CardImageRight = styled.div`
-  margin: 8px 4px;
-  background-color: #506355;
-  padding: 16px;
-  display: grid;
-  border-radius: 4px;
-  box-shadow: 2px 2px 2px 2px #506355;
-  grid-template-areas:
-    "cardbody cardbody cardbody cardimage"
-    "cardbody cardbody cardbody cardimage"
-    "techstack techstack techstack cardimage";
-
-  @media screen and (max-width: 600px) {
-    grid-template-areas:
-      "cardimage cardimage cardimage cardimage"
-      "cardbody cardbody cardbody cardbody"
-      "techstack techstack techstack techstack";
+  &:hover {
+    transform: scale(1.2);
   }
 `;
 
@@ -130,11 +116,11 @@ const Link = styled.a`
 const Projects = () => {
   return (
     <Section id="projects">
-      <Container>
-        <Title>Some of my projects</Title>
+      <Title>Some of my projects</Title>
 
+      <Container>
         <Link href="https://easybuy-client.netlify.app/" target="_blank">
-          <CardImageLeft>
+          <Card>
             <ImageBox>
               <CardImage src="/img/easybuy.svg" />
             </ImageBox>
@@ -152,11 +138,11 @@ const Projects = () => {
               <TechItem>Stripe</TechItem>
               <TechItem>Chakra UI</TechItem>
             </TechStack>
-          </CardImageLeft>
+          </Card>
         </Link>
 
         <Link href="https://next-recipe-tau.vercel.app/" target="_blank">
-          <CardImageRight>
+          <Card>
             <ImageBox>
               <CardImage src="/img/recipe.png" />
             </ImageBox>
@@ -169,14 +155,14 @@ const Projects = () => {
               <TechItem>NextJS 13</TechItem>
               <TechItem>MongoDB</TechItem>
             </TechStack>
-          </CardImageRight>
+          </Card>
         </Link>
 
         <Link
           href="https://enchanting-trifle-b8b1f1.netlify.app/"
           target="_blank"
         >
-          <CardImageLeft>
+          <Card>
             <ImageBox>
               <CardImage src="/img/taskify.svg" />
             </ImageBox>
@@ -190,11 +176,11 @@ const Projects = () => {
               <TechItem>React</TechItem>
               <TechItem>React Beautiful DND</TechItem>
             </TechStack>
-          </CardImageLeft>
+          </Card>
         </Link>
 
         <Link target="_blank" href="https://infoaboutcrypto.netlify.app/">
-          <CardImageRight>
+          <Card>
             <ImageBox>
               <CardImage src="/img/xCrypto.svg" />
             </ImageBox>
@@ -210,11 +196,11 @@ const Projects = () => {
               <TechItem>Chakra UI</TechItem>
               <TechItem>Coingecko API</TechItem>
             </TechStack>
-          </CardImageRight>
+          </Card>
         </Link>
 
         <Link href="https://recipe-app-client.netlify.app/" target="_blank">
-          <CardImageLeft>
+          <Card>
             <ImageBox>
               <CardImage src="/img/foodworld.svg" />
             </ImageBox>
@@ -229,7 +215,7 @@ const Projects = () => {
               <TechItem>Express</TechItem>
               <TechItem>Chakra UI</TechItem>
             </TechStack>
-          </CardImageLeft>
+          </Card>
         </Link>
       </Container>
     </Section>
