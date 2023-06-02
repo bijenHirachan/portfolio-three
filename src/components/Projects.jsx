@@ -217,6 +217,25 @@ const Projects = () => {
             </TechStack>
           </Card>
         </Link>
+        <Link href="https://letschatguys.netlify.app" target="_blank">
+          <Card>
+            <ImageBox>
+              <CardImage src="/img/letschat.png" />
+            </ImageBox>
+            <CardBody>
+              <CardTitle>Let's Chat</CardTitle>
+              <CardSubTitle>A chatting app</CardSubTitle>
+            </CardBody>
+            <TechStack>
+              <TechItem>React</TechItem>
+              <TechItem>Redux</TechItem>
+              <TechItem>MongoDB</TechItem>
+              <TechItem>Express</TechItem>
+              <TechItem>SocketIO</TechItem>
+              <TechItem>TailwindCSS</TechItem>
+            </TechStack>
+          </Card>
+        </Link>
       </Container>
     </Section>
   );
